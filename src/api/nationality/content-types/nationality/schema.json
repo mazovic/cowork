@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nationalities",
+  "info": {
+    "singularName": "nationality",
+    "pluralName": "nationalities",
+    "displayName": "nationality",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "user_infos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::user-info.user-info",
+      "mappedBy": "nationalities"
+    }
+  }
+}

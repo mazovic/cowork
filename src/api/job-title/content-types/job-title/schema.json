@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "job_titles",
+  "info": {
+    "singularName": "job-title",
+    "pluralName": "job-titles",
+    "displayName": "jobs",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "job_titles"
+    },
+    "jobTitle": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "user_infos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::user-info.user-info",
+      "mappedBy": "job"
+    }
+  }
+}
