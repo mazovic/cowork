@@ -10,11 +10,7 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {
-    "i18n": {
-      "localized": true
-    }
-  },
+  "pluginOptions": {},
   "attributes": {
     "category": {
       "type": "relation",
@@ -25,16 +21,18 @@
     "jobTitle": {
       "type": "string",
       "required": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "pluginOptions": {}
     },
     "user_infos": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::user-info.user-info",
+      "mappedBy": "job"
+    },
+    "job_offers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::job.job",
       "mappedBy": "job"
     }
   }

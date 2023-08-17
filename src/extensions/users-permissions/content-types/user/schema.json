@@ -72,16 +72,10 @@
       "target": "api::company.company",
       "mappedBy": "users_permissions_user"
     },
-    "user_infos": {
+    "user_info": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "oneToOne",
       "target": "api::user-info.user-info",
-      "mappedBy": "users_permissions_user"
-    },
-    "job_offers": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::job.job",
       "mappedBy": "users_permissions_user"
     }
   }

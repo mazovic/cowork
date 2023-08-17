@@ -18,7 +18,7 @@
   "attributes": {
     "birthDate": {
       "type": "date",
-      "required": true,
+      "required": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -39,7 +39,7 @@
     },
     "nationalID": {
       "type": "string",
-      "required": true,
+      "required": false,
       "unique": true,
       "pluginOptions": {
         "i18n": {
@@ -70,9 +70,9 @@
     },
     "users_permissions_user": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToOne",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "user_infos"
+      "inversedBy": "user_info"
     },
     "photo": {
       "type": "media",
@@ -118,17 +118,34 @@
       "inversedBy": "user_infos"
     },
     "cv": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "files"
       ],
-      "type": "media",
-      "multiple": false,
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
+      }
+    },
+    "name": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
       },
-      "required": false
+      "type": "string",
+      "required": true
+    },
+    "bio": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

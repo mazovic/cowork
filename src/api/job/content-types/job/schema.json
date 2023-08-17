@@ -25,15 +25,6 @@
         }
       }
     },
-    "title": {
-      "type": "string",
-      "required": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "salary": {
       "type": "string",
       "required": true,
@@ -114,10 +105,40 @@
       "target": "api::language.language",
       "mappedBy": "job_offers"
     },
-    "users_permissions_user": {
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "job": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
+      "target": "api::job-title.job-title",
+      "inversedBy": "job_offers"
+    },
+    "isClosed": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::company.company",
       "inversedBy": "job_offers"
     }
   }

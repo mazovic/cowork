@@ -21,6 +21,14 @@
       "relation": "manyToMany",
       "target": "api::user-info.user-info",
       "mappedBy": "nationalities"
+    },
+    "name": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

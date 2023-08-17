@@ -27,6 +27,15 @@
       "relation": "manyToMany",
       "target": "api::company.company",
       "mappedBy": "categories"
+    },
+    "category": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
     }
   }
 }

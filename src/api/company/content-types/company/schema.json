@@ -45,7 +45,7 @@
         "employees50-99 ",
         "more"
       ],
-      "required": true
+      "required": false
     },
     "categories": {
       "type": "relation",
@@ -76,16 +76,39 @@
       "required": true
     },
     "companyLogo": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ],
-      "type": "media",
-      "multiple": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
+    },
+    "job_offers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::job.job",
+      "mappedBy": "company"
+    },
+    "companyTagline": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "companyWebsite": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }
